@@ -5,7 +5,7 @@ Summary(pl):	GIT - interaktywne narzêdzia GNU
 Summary(tr):	GNU görsel kabuðu
 Name:		git
 Version:	4.3.20
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/File
 Group(de):	Applikationen/Datei
@@ -96,6 +96,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_bindir}/.gitaction
 %{_mandir}/man1/*
-%{_infodir}/*
+%{_infodir}/git.info*
 %dir %{_datadir}/git
 %{_datadir}/git/.gitrc*
