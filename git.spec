@@ -5,7 +5,7 @@ Summary(pl):	GIT - interaktywne narzêdzia GNU
 Summary(tr):	GNU görsel kabuðu
 Name:		git
 Version:	4.3.20
-Release:	6
+Release:	7
 License:	GPL
 Group:		Applications/File
 Group(de):	Applikationen/Datei
@@ -68,9 +68,10 @@ betik çalýþtýrma yetenekleri vardýr.
 %patch1 -p1
 
 %build
+rm -f missing
 aclocal
-automake -a -c
 autoconf
+automake -a -c
 %configure \
 	--with-terminfo
 %{__make}
