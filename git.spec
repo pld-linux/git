@@ -5,7 +5,7 @@ Summary(pl):	GIT - interaktywne narzêdzia GNU
 Summary(tr):	GNU görsel kabuðu
 Name:		git
 Version:	4.3.20
-Release:	5
+Release:	6
 License:	GPL
 Group:		Applications/File
 Group(de):	Applikationen/Datei
@@ -14,8 +14,8 @@ Source0:	ftp://ftp.gnu.org/pub/gnu/git/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.pach
 Patch1:		%{name}-DESTDIR.patch
 BuildRequires:	automake
-BuildRequires:	ncurses-devel >= 5.1
-BuildRequires:	readline-devel
+BuildRequires:	ncurses-devel >= 5.2
+BuildRequires:	readline-devel >= 4.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -67,8 +67,9 @@ betik çalýþtýrma yetenekleri vardýr.
 %patch1 -p1
 
 %build
-automake
-%configure --with-terminfo
+automake -a -c
+%configure \
+	--with-terminfo
 %{__make}
 
 %install
@@ -79,14 +80,14 @@ rm -rf $RPM_BUILD_ROOT
 
 gzip -9nf ChangeLog LSM NEWS PLATFORMS PROBLEMS README
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
