@@ -50,7 +50,7 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install-strip prefix=$RPM_BUILD_ROOT%{_prefix}
+%{__make} install-strip prefix=$RPM_BUILD_ROOT%{_prefix}
 
 gzip -9nf $RPM_BUILD_ROOT%{_infodir}/git.info* \
 	ChangeLog LSM NEWS PLATFORMS PROBLEMS README \
