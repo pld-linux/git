@@ -46,7 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %build
 %configure --with-terminfo
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
