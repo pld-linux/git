@@ -67,7 +67,9 @@ betik çalýþtýrma yetenekleri vardýr.
 %patch1 -p1
 
 %build
+aclocal
 automake -a -c
+autoconf
 %configure \
 	--with-terminfo
 %{__make}
