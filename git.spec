@@ -8,8 +8,6 @@ Version:	4.3.20
 Release:	7
 License:	GPL
 Group:		Applications/File
-Group(de):	Applikationen/Datei
-Group(pl):	Aplikacje/Pliki
 Source0:	ftp://ftp.gnu.org/pub/gnu/git/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.pach
 Patch1:		%{name}-DESTDIR.patch
