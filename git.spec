@@ -1,13 +1,21 @@
-Summary:	A set of GNU Interactive Tools.
+Summary:	A set of GNU Interactive Tools
+Summary(de):	GIT - GNU Interactive Tools
+Summary(fr):	GIT - Outils interactifs de GNU
+Summary(pl):	GIT - interaktywne narzêdzia GNU
+Summary(tr):	GNU görsel kabuðu
 Name:		git
-Version:	4.3.17
-Release:	7
+Version:	4.3.20
+Release:	3
 License:	GPL
-Group:		Utilities/File
-Group(pl):	Narzêdzia/Pliki
-Source0:	ftp://prep.ai.mit.edu:/pub/gnu/%{name}-%{version}.tar.gz
-Patch0:		git-4.3.17-path.patch
-Patch1:		git-FHS.patch
+Group:		Applications/File
+Group(de):	Applikationen/Datei
+Group(pl):	Aplikacje/Pliki
+Source0:	ftp://ftp.gnu.org/pub/gnu/git/%{name}-%{version}.tar.gz
+Patch0:		git-info.pach
+Patch1:		git-DESTDIR.patch
+BuildRequires:	automake
+BuildRequires:	ncurses-devel >= 5.1
+BuildRequires:	readline-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -19,8 +27,21 @@ invoking editors, compressing and uncompressing files, creating and
 expanding archives, compiling programs, sending mail and more. GIT
 uses standard ANSI color sequences, if they are available.
 
-You should install the git package if you are interested in using its
-file management capabilities.
+%description -l de
+GIT ist ein Dateisystem-Browser für UNIX-Systeme. Ein interaktiver
+Prozeß-Viewer/Killer, ein Hex/ASCII-Datei-Viewer, ein
+Auto-Mount-Shell-Skript und ein dateiformatbezogenes Aktions-Skript
+sind ebenfalls erhältlich.
+
+%description -l fr
+GIT est un navigateur de systèmes de fichiers pour les systèmes UNIX.
+Un visualisateur/destructeur interactif de processus, un visualisateur
+de fichiers en hexa/ascii, un script shell d'automontage et un script
+d'actions par type de fichier sont aussi disponibles.
+
+Les séquences standard ANSI pour les couleurs sont utilisées
+lorsqu'elles sont disponibles. Les pages du manuel et la doc info sont
+aussi fournies.
 
 %description -l pl
 GIT (GNU Interactive Tools, interaktywne narzêdzia GNU) to elastyczna
@@ -34,26 +55,30 @@ archiwów, kompilacja programów, wysy³anie poczty itd. GIT uzywa
 standardowych sekwencji koloryzuj±cych ANSI, je¶li system je
 obs³uguje.
 
-Nale¿y zainstalowac pakiet git je¶li che siê wykorzystac jego
-mo¿liwo¶ci w zarz±dzaniu plikami.
+%description -l tr
+GIT, UNIX sistemler için bir dosya sistemi arayüzüdür. Etkileþimli bir
+süreç görüntüleyici/sonlandýrýcý, bir hex/ascii dosya görüntüleyici,
+bir otomatik baðlayýcý (auto-mount) kabuk betiði ve dosya tipine göre
+betik çalýþtýrma yetenekleri vardýr.
 
 %prep
-rm -rf $RPM_BUILD_ROOT
-
 %setup -q
 %patch0 -p1
 %patch1 -p1
 
 %build
+automake
 %configure --with-terminfo
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install-strip prefix=$RPM_BUILD_ROOT%{_prefix}
 
-gzip -9nf $RPM_BUILD_ROOT%{_infodir}/git.info* \
-	ChangeLog LSM NEWS PLATFORMS PROBLEMS README \
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+gzip -9nf ChangeLog LSM NEWS PLATFORMS PROBLEMS README \
+	$RPM_BUILD_ROOT%{_infodir}/git.info* \
 	$RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %clean
@@ -67,11 +92,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {ChangeLog,LSM,NEWS,PLATFORMS,PROBLEMS,README}.gz
-%doc %dir %{_datadir}/git/html
-%doc %{_datadir}/git/html/*
+%doc *.gz
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_bindir}/.gitaction
 %{_mandir}/man1/*
 %{_infodir}/*
+%dir %{_datadir}/git
 %{_datadir}/git/.gitrc*
