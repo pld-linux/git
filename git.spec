@@ -1,7 +1,7 @@
 Summary:	A set of GNU Interactive Tools.
 Name:		git
 Version:	4.3.17
-Release:	6
+Release:	7
 Copyright:	GNU
 Group:		Applications/File
 Source:		ftp://prep.ai.mit.edu:/pub/gnu/%{name}-%{version}.tar.gz
@@ -47,7 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 %post
 /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%preun
+%postun
 /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %files
