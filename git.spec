@@ -7,7 +7,7 @@ Group:		Applications/File
 Source:		ftp://prep.ai.mit.edu:/pub/gnu/%{name}-%{version}.tar.gz
 Patch0:		git-4.3.17-path.patch
 Patch1:		git-FHS.patch
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Prereq:		/usr/sbin/fix-info-dir
 
 %description
@@ -34,7 +34,6 @@ GIT uzywa standardowych sekwencji koloryzuj±cych ANSI, je¶li system je obs³uguje
 
 Nale¿y zainstalowac pakiet git je¶li che siê wykorzystac jego mo¿liwo¶ci
 w zarz±dzaniu plikami.
-
 
 %prep
 rm -rf $RPM_BUILD_ROOT
