@@ -1,0 +1,17 @@
+diff -Nru git-4.3.20/doc/git.texinfo git-4.3.20.new/doc/git.texinfo
+--- git-4.3.20/doc/git.texinfo	Tue Sep 19 22:23:45 2000
++++ git-4.3.20.new/doc/git.texinfo	Thu Mar  9 23:59:55 2000
+@@ -18,9 +18,10 @@
+ 
+ @ifinfo
+ @format
+-START-INFO-DIR-ENTRY
+-* GIT: (git).         GNU Interactive Tools
+-END-INFO-DIR-ENTRY
++@dircategory Miscellaneous:
++@direntry
++* GIT: (git).				GNU Interactive Tools
++@end direntry
+ @end format
+ 
+ GIT: A set of interactive tools, by Tudor Hulubei and Andrei Pitis.
