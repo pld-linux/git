@@ -1,13 +1,13 @@
-Summary: A set of GNU Interactive Tools.
-Name: git
-Version: 4.3.17
-Release: 5
-Copyright: GNU
-Group: Applications/File
-Source: ftp://prep.ai.mit.edu:/pub/gnu/git-4.3.17.tar.gz
-Patch0: git-4.3.17-path.patch
-Buildroot: /var/tmp/git-root
-Prereq: /sbin/install-info
+Summary:	A set of GNU Interactive Tools.
+Name:		git
+Version:	4.3.17
+Release:	6
+Copyright:	GNU
+Group:		Applications/File
+Source:		ftp://prep.ai.mit.edu:/pub/gnu/%{name}-%{version}.tar.gz
+Patch0:		git-4.3.17-path.patch
+Buildroot:	/tmp/%{name}-%{version}-root
+Prereq:		/sbin/install-info
 
 %description
 GIT (GNU Interactive Tools) provides an extensible file system browser,
@@ -24,27 +24,20 @@ management capabilities.
 %prep
 rm -rf $RPM_BUILD_ROOT
 
-%setup
-%patch0 -p1 -b .path
+%setup -q
+%patch0 -p1
 
 %build
-CFLAGS="-D_GNU_SOURCE $RPM_OPT_FLAGS" LDFLAGS='-s' ./configure --prefix=/usr \
-	--with-terminfo
+%configure --with-terminfo
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make prefix=$RPM_BUILD_ROOT/usr/ install-strip
-gzip -9nf $RPM_BUILD_ROOT/usr/info/git.info*
+make install-strip prefix=$RPM_BUILD_ROOT%{_prefix}
 
-%files
-%doc COPYING ChangeLog LSM NEWS PLATFORMS PROBLEMS README INSTALL
-/usr/bin/*
-/usr/bin/.gitaction
-/usr/man/man1/*
-/usr/info/*
-/usr/lib/git/.gitrc*
-%docdir /usr/lib/git/html
+gzip -9nf $RPM_BUILD_ROOT/usr/info/git.info* \
+	ChangeLog LSM NEWS PLATFORMS PROBLEMS README \
+	$RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -56,3 +49,13 @@ rm -rf $RPM_BUILD_ROOT
 if [ "$1" = 0 ]; then
     /sbin/install-info --delete /usr/info/git.info.gz /usr/info/dir
 fi
+
+%files
+%defattr(644,root,root,755)
+%doc {ChangeLog,LSM,NEWS,PLATFORMS,PROBLEMS,README}.gz
+%docdir %{_libdir}/git/html
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/.gitaction
+%{_mandir}/man1/*
+%{_infodir}/*
+%{_libdir}/git/.gitrc*
