@@ -68,8 +68,8 @@ betik çalýþtýrma yetenekleri vardýr.
 %build
 rm -f missing
 aclocal
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure \
 	--with-terminfo
 %{__make}
