@@ -8,7 +8,7 @@ Source:		ftp://prep.ai.mit.edu:/pub/gnu/%{name}-%{version}.tar.gz
 Patch0:		git-4.3.17-path.patch
 Patch1:		git-FHS.patch
 Buildroot:	/tmp/%{name}-%{version}-root
-Prereq:		/sbin/install-info
+Prereq:		/usr/sbin/fix-info-dir
 
 %description
 GIT (GNU Interactive Tools) provides an extensible file system browser,
@@ -45,12 +45,10 @@ gzip -9nf $RPM_BUILD_ROOT%{_infodir}/git.info* \
 rm -rf $RPM_BUILD_ROOT
 
 %post
-/sbin/install-info /usr/info/git.info.gz /usr/info/dir
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %preun
-if [ "$1" = 0 ]; then
-    /sbin/install-info --delete /usr/info/git.info.gz /usr/info/dir
-fi
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %files
 %defattr(644,root,root,755)
