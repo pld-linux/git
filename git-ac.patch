@@ -1,0 +1,22 @@
+--- git-4.3.20/configure.in.orig	1999-12-19 01:51:06.000000000 +0100
++++ git-4.3.20/configure.in	2004-03-29 21:16:45.706242704 +0200
+@@ -322,9 +322,9 @@
+ dnl files belong to the GNU readline library version 2.0.1.
+ AC_CHECK_LIB(readline, tilde_expand)
+ AC_CHECK_FUNC(tilde_expand,,
+-	LIBOBJS="$LIBOBJS tilde.o")
++	[AC_LIBOBJ([tilde])])
+ AC_CHECK_FUNC(using_history,,
+-	LIBOBJS="$LIBOBJS history.o")
++	[AC_LIBOBJ([history])])
+ 
+ dnl Check for compilers that do not support constructs combinations
+ dnl of ANSI C like prototypes & K&R definitions.  B.O.S. systems.
+@@ -567,7 +567,6 @@
+ AC_SUBST(LDFLAGS)dnl
+ AC_SUBST(INCLUDES)dnl
+ AC_SUBST(CLEANFILES)dnl
+-AC_SUBST(LIBOBJS)dnl
+ 
+ dnl Generate the Makefiles.
+ AC_OUTPUT(version.h
