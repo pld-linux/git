@@ -1,0 +1,105 @@
+diff -Nru git-4.3.20/term/Makefile.am git-4.3.20.new/term/Makefile.am
+--- git-4.3.20/term/Makefile.am	Mon Apr 26 02:28:00 1999
++++ git-4.3.20.new/term/Makefile.am	Tue Sep 19 22:20:17 2000
+@@ -1,8 +1,4 @@
+ # $Id$
+-EXTRA_DIST = .gitrc.aixterm .gitrc.ansi .gitrc.common.in\
+-	     .gitrc.generic .gitrc.hft .gitrc.hpterm .gitrc.linux\
+-	     .gitrc.mach .gitrc.minix .gitrc.thix .gitrc.vt100\
+-	     .gitrc.vt102 .gitrc.xterm .gitrc.xterm-color
+ pkgdata_DATA = .gitrc.aixterm .gitrc.ansi .gitrc.common\
+ 	       .gitrc.generic .gitrc.hft .gitrc.hpterm .gitrc.linux\
+ 	       .gitrc.mach .gitrc.minix .gitrc.thix .gitrc.vt100\
+@@ -21,78 +17,71 @@
+ install-data-hook:
+ 	for i in $(GIT_XTERMS);\
+ 	do\
+-	    rm -f $(datadir)/git/$$i;\
+-	    ln $(datadir)/git/.gitrc.xterm $(datadir)/git/$$i;\
++	    ln -sf .gitrc.xterm $(DESTDIR)$(datadir)/git/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_COLOR_XTERMS);\
+ 	do\
+-	    rm -f $(datadir)/git/$$i;\
+-	    ln $(datadir)/git/.gitrc.xterm-color $(datadir)/git/$$i;\
++	    ln -sf .gitrc.xterm-color $(DESTDIR)$(datadir)/git/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_HPTERMS);\
+ 	do\
+-	    rm -f $(datadir)/git/$$i;\
+-	    ln $(datadir)/git/.gitrc.hpterm $(datadir)/git/$$i;\
++	    ln -sf .gitrc.hpterm $(DESTDIR)$(datadir)/git/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_GENERICS);\
+ 	do\
+-	    rm -f $(datadir)/git/$$i;\
+-	    ln $(datadir)/git/.gitrc.generic $(datadir)/git/$$i;\
++	    ln -sf .gitrc.generic $(DESTDIR)$(datadir)/git/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_VT100S);\
+ 	do\
+-	    rm -f $(datadir)/git/$$i;\
+-	    ln $(datadir)/git/.gitrc.vt100 $(datadir)/git/$$i;\
++	    ln -sf .gitrc.vt100 $(DESTDIR)$(datadir)/git/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_ANSIS);\
+ 	do\
+-	    rm -f $(datadir)/git/$$i;\
+-	    ln $(datadir)/git/.gitrc.ansi $(datadir)/git/$$i;\
++	    ln -sf .gitrc.ansi $(DESTDIR)$(datadir)/git/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_LINUXS);\
+ 	do\
+-	    rm -f $(datadir)/git/$$i;\
+-	    ln $(datadir)/git/.gitrc.linux $(datadir)/git/$$i;\
++	    ln -sf .gitrc.linux $(DESTDIR)$(datadir)/git/$$i;\
+ 	done
+ 
+ uninstall-local:
+ 	for i in $(GIT_XTERMS);\
+ 	do\
+-	    rm -f $(datadir)/git/$$i;\
++	    rm -f $(DESTDIR)$(datadir)/git/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_COLOR_XTERMS);\
+ 	do\
+-	    rm -f $(datadir)/git/$$i;\
++	    rm -f $(DESTDIR)$(datadir)/git/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_HPTERMS);\
+ 	do\
+-	    rm -f $(datadir)/git/$$i;\
++	    rm -f $(DESTDIR)$(datadir)/git/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_GENERICS);\
+ 	do\
+-	    rm -f $(datadir)/git/$$i;\
++	    rm -f $(DESTDIR)$(datadir)/git/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_VT100S);\
+ 	do\
+-	    rm -f $(datadir)/git/$$i;\
++	    rm -f $(DESTDIR)$(datadir)/git/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_ANSIS);\
+ 	do\
+-	    rm -f $(datadir)/git/$$i;\
++	    rm -f $(DESTDIR)$(datadir)/git/$$i;\
+ 	done
+ 	\
+ 	for i in $(GIT_LINUXS);\
+ 	do\
+-	    rm -f $(datadir)/git/$$i;\
++	    rm -f $(DESTDIR)$(datadir)/git/$$i;\
+ 	done
