@@ -83,10 +83,10 @@ rm -rf $RPM_BUILD_ROOT
 gzip -9nf ChangeLog LSM NEWS PLATFORMS PROBLEMS README
 
 %post
-%fix_info_dir
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun
-%fix_info_dir
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
