@@ -9,6 +9,7 @@ Release:	7
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnu.org/pub/gnu/git/%{name}-%{version}.tar.gz
+# Source0-md5:	72b01d5f9905951137ac1bb87d7e431c
 Patch0:		%{name}-info.pach
 Patch1:		%{name}-DESTDIR.patch
 BuildRequires:	autoconf
