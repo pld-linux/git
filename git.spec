@@ -47,13 +47,13 @@ aussi fournies.
 
 %description -l pl
 GIT (GNU Interactive Tools, interaktywne narzêdzia GNU) to elastyczna
-przgl±darka plików, narzêdzie do przegl±dania zawarto¶ci plików w
-formacie ASCII i szesnanstkowym, przegladarka i eliminator procesów
+przegl±darka plików, narzêdzie do przegl±dania zawarto¶ci plików w
+formacie ASCII i szesnanstkowym, przegl±darka i eliminator procesów
 oraz inne, pokrewne narzêdzia i skrypty pow³oki. Dziêki interaktywnym
-narzêdziom GNU mo¿na zwiêkszyæ szybko¶æ i efektywno¶æ takich czynnosci
+narzêdziom GNU mo¿na zwiêkszyæ szybko¶æ i efektywno¶æ takich czynno¶ci
 jak kopiowanie i przenoszenie plików i katalogów, wywo³ywania
 edytorów, pakowanie i rozpakowywanie plików, tworzenie i ekstrakcja
-archiwów, kompilacja programów, wysy³anie poczty itd. GIT uzywa
+archiwów, kompilacja programów, wysy³anie poczty itd. GIT u¿ywa
 standardowych sekwencji koloryzuj±cych ANSI, je¶li system je
 obs³uguje.
 
