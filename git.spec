@@ -22,6 +22,20 @@ ANSI color sequences, if they are available.
 You should install the git package if you are interested in using its file
 management capabilities.
 
+%description -l pl
+GIT (GNU Interactive Tools, interaktywne narzêdzia GNU) to elastyczna
+przgl±darka plików, narzêdzie do przegl±dania zawarto¶ci plików w formacie
+ASCII i szesnanstkowym, przegladarka i eliminator procesów oraz inne, pokrewne
+narzêdzia i skrypty pow³oki. Dziêki interaktywnym narzêdziom GNU mo¿na 
+zwiêkszyæ szybko¶æ i efektywno¶æ takich czynnosci jak kopiowanie i przenoszenie
+plików i katalogów, wywo³ywania edytorów, pakowanie i rozpakowywanie plików,
+tworzenie i ekstrakcja archiwów, kompilacja programów, wysy³anie poczty itd.
+GIT uzywa standardowych sekwencji koloryzuj±cych ANSI, je¶li system je obs³uguje.
+
+Nale¿y zainstalowac pakiet git je¶li che siê wykorzystac jego mo¿liwo¶ci
+w zarz±dzaniu plikami.
+
+
 %prep
 rm -rf $RPM_BUILD_ROOT
 
