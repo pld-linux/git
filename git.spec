@@ -69,7 +69,7 @@ betik çalýþtýrma yetenekleri vardýr.
 rm -f missing
 aclocal
 autoconf
-automake -a -c
+automake -a -c -f
 %configure \
 	--with-terminfo
 %{__make}
