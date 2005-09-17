@@ -5,7 +5,7 @@ Summary(pl):	GIT - interaktywne narzêdzia GNU
 Summary(tr):	GNU görsel kabuðu
 Name:		git
 Version:	4.3.20
-Release:	8
+Release:	9
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnu.org/pub/gnu/git/%{name}-%{version}.tar.gz
