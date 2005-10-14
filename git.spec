@@ -1,3 +1,6 @@
+# TODO:
+# - there's a conflict between git-core and git (git binary), 
+#   rename the latter to git.gnu?
 Summary:	A set of GNU Interactive Tools
 Summary(de):	GIT - GNU Interactive Tools
 Summary(fr):	GIT - Outils interactifs de GNU
