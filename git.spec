@@ -1,6 +1,3 @@
-# TODO:
-# - there's a conflict between git-core and git (git binary), 
-#   rename the latter to git.gnu?
 Summary:	A set of GNU Interactive Tools
 Summary(de):	GIT - GNU Interactive Tools
 Summary(fr):	GIT - Outils interactifs de GNU
@@ -8,7 +5,7 @@ Summary(pl):	GIT - interaktywne narzêdzia GNU
 Summary(tr):	GNU görsel kabuðu
 Name:		git
 Version:	4.3.20
-Release:	9
+Release:	10
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnu.org/pub/gnu/git/%{name}-%{version}.tar.gz
@@ -88,6 +85,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# rename the binary to avoid collision with git-core 
+# OTOH, Debian renamed git-core. 
+mv -f $RPM_BUILD_ROOT%{_bindir}/git{,.gnu}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
