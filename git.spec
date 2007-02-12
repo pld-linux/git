@@ -1,8 +1,8 @@
 Summary:	A set of GNU Interactive Tools
-Summary(de):	GIT - GNU Interactive Tools
-Summary(fr):	GIT - Outils interactifs de GNU
-Summary(pl):	GIT - interaktywne narzêdzia GNU
-Summary(tr):	GNU görsel kabuğu
+Summary(de.UTF-8):   GIT - GNU Interactive Tools
+Summary(fr.UTF-8):   GIT - Outils interactifs de GNU
+Summary(pl.UTF-8):   GIT - interaktywne narzÄ™dzia GNU
+Summary(tr.UTF-8):   GNU gÃ¶rsel kabuÄŸu
 Name:		git
 Version:	4.3.20
 Release:	10
@@ -29,39 +29,39 @@ invoking editors, compressing and uncompressing files, creating and
 expanding archives, compiling programs, sending mail and more. GIT
 uses standard ANSI color sequences, if they are available.
 
-%description -l de
-GIT ist ein Dateisystem-Browser für UNIX-Systeme. Ein interaktiver
-Prozeß-Viewer/Killer, ein Hex/ASCII-Datei-Viewer, ein
+%description -l de.UTF-8
+GIT ist ein Dateisystem-Browser fÃ¼r UNIX-Systeme. Ein interaktiver
+ProzeÃŸ-Viewer/Killer, ein Hex/ASCII-Datei-Viewer, ein
 Auto-Mount-Shell-Skript und ein dateiformatbezogenes Aktions-Skript
-sind ebenfalls erhältlich.
+sind ebenfalls erhÃ¤ltlich.
 
-%description -l fr
-GIT est un navigateur de systèmes de fichiers pour les systèmes UNIX.
+%description -l fr.UTF-8
+GIT est un navigateur de systÃ¨mes de fichiers pour les systÃ¨mes UNIX.
 Un visualisateur/destructeur interactif de processus, un visualisateur
 de fichiers en hexa/ascii, un script shell d'automontage et un script
 d'actions par type de fichier sont aussi disponibles.
 
-Les séquences standard ANSI pour les couleurs sont utilisées
+Les sÃ©quences standard ANSI pour les couleurs sont utilisÃ©es
 lorsqu'elles sont disponibles. Les pages du manuel et la doc info sont
 aussi fournies.
 
-%description -l pl
-GIT (GNU Interactive Tools, interaktywne narzêdzia GNU) to elastyczna
-przegl±darka plików, narzêdzie do przegl±dania zawarto¶ci plików w
-formacie ASCII i szesnanstkowym, przegl±darka i eliminator procesów
-oraz inne, pokrewne narzêdzia i skrypty pow³oki. Dziêki interaktywnym
-narzêdziom GNU mo¿na zwiêkszyæ szybko¶æ i efektywno¶æ takich czynno¶ci
-jak kopiowanie i przenoszenie plików i katalogów, wywo³ywania
-edytorów, pakowanie i rozpakowywanie plików, tworzenie i ekstrakcja
-archiwów, kompilacja programów, wysy³anie poczty itd. GIT u¿ywa
-standardowych sekwencji koloryzuj±cych ANSI, je¶li system je
-obs³uguje.
+%description -l pl.UTF-8
+GIT (GNU Interactive Tools, interaktywne narzÄ™dzia GNU) to elastyczna
+przeglÄ…darka plikÃ³w, narzÄ™dzie do przeglÄ…dania zawartoÅ›ci plikÃ³w w
+formacie ASCII i szesnanstkowym, przeglÄ…darka i eliminator procesÃ³w
+oraz inne, pokrewne narzÄ™dzia i skrypty powÅ‚oki. DziÄ™ki interaktywnym
+narzÄ™dziom GNU moÅ¼na zwiÄ™kszyÄ‡ szybkoÅ›Ä‡ i efektywnoÅ›Ä‡ takich czynnoÅ›ci
+jak kopiowanie i przenoszenie plikÃ³w i katalogÃ³w, wywoÅ‚ywania
+edytorÃ³w, pakowanie i rozpakowywanie plikÃ³w, tworzenie i ekstrakcja
+archiwÃ³w, kompilacja programÃ³w, wysyÅ‚anie poczty itd. GIT uÅ¼ywa
+standardowych sekwencji koloryzujÄ…cych ANSI, jeÅ›li system je
+obsÅ‚uguje.
 
-%description -l tr
-GIT, UNIX sistemler için bir dosya sistemi arayüzüdür. Etkileşimli bir
-süreç görüntüleyici/sonlandırıcı, bir hex/ascii dosya görüntüleyici,
-bir otomatik bağlayıcı (auto-mount) kabuk betiği ve dosya tipine göre
-betik çalıştırma yetenekleri vardır.
+%description -l tr.UTF-8
+GIT, UNIX sistemler iÃ§in bir dosya sistemi arayÃ¼zÃ¼dÃ¼r. EtkileÅŸimli bir
+sÃ¼reÃ§ gÃ¶rÃ¼ntÃ¼leyici/sonlandÄ±rÄ±cÄ±, bir hex/ascii dosya gÃ¶rÃ¼ntÃ¼leyici,
+bir otomatik baÄŸlayÄ±cÄ± (auto-mount) kabuk betiÄŸi ve dosya tipine gÃ¶re
+betik Ã§alÄ±ÅŸtÄ±rma yetenekleri vardÄ±r.
 
 %prep
 %setup -q
