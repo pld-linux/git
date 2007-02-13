@@ -1,8 +1,8 @@
 Summary:	A set of GNU Interactive Tools
-Summary(de.UTF-8):   GIT - GNU Interactive Tools
-Summary(fr.UTF-8):   GIT - Outils interactifs de GNU
-Summary(pl.UTF-8):   GIT - interaktywne narzędzia GNU
-Summary(tr.UTF-8):   GNU görsel kabuğu
+Summary(de.UTF-8):	GIT - GNU Interactive Tools
+Summary(fr.UTF-8):	GIT - Outils interactifs de GNU
+Summary(pl.UTF-8):	GIT - interaktywne narzędzia GNU
+Summary(tr.UTF-8):	GNU görsel kabuğu
 Name:		git
 Version:	4.3.20
 Release:	10
