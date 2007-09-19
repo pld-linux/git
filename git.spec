@@ -6,17 +6,17 @@ Summary(tr.UTF-8):	GNU görsel kabuğu
 Name:		git
 Version:	4.3.20
 Release:	10
-License:	GPL v2
+License:	GPL v2+
 Group:		Applications/File
-Source0:	ftp://ftp.gnu.org/pub/gnu/git/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnu.org/gnu/git/%{name}-%{version}.tar.gz
 # Source0-md5:	72b01d5f9905951137ac1bb87d7e431c
 Patch0:		%{name}-info.pach
 Patch1:		%{name}-DESTDIR.patch
 Patch2:		%{name}-ac.patch
+URL:		http://www.gnu.org/software/git/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	ncurses-devel >= 5.2
-BuildRequires:	pdksh >= 5.2.14-46
 BuildRequires:	readline-devel >= 4.2
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
