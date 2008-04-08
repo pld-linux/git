@@ -8,7 +8,7 @@ Version:	4.3.20
 Release:	10
 License:	GPL v2+
 Group:		Applications/File
-Source0:	ftp://ftp.gnu.org/gnu/git/%{name}-%{version}.tar.gz
+Source0:	http://ftp.gnu.org/gnu/git/%{name}-%{version}.tar.gz
 # Source0-md5:	72b01d5f9905951137ac1bb87d7e431c
 Patch0:		%{name}-info.pach
 Patch1:		%{name}-DESTDIR.patch
