@@ -66,9 +66,9 @@ betik çalıştırma yetenekleri vardır.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
+%patch -P0 -p1
+%patch -P1 -p1
+%patch -P2 -p1
 
 touch doc/git.html
 
